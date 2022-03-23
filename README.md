@@ -47,6 +47,43 @@ $ make DEBUG=1
 
 The binary will be created at location "lib" with the name libgtpv1c.so
 
+### How to Check Code Coverage
+Step 1 : Move to the root(libgtpv1c) directory and do normal build
+
+```
+$ make
+```
+
+Step 2 : Move to the test folder and do normal build
+
+```
+$ make
+```
+
+Step 3 : Now run all test suites
+
+```
+$ ./lib/gtpv1c_test
+```
+
+Step 4 : Now again move to root directory and run command
+
+```
+$ gcov ./src/*.c -o ./obj/
+```
+
+Step 5 : To create graphical gcov front-end run below command
+
+```
+$ lcov --capture --directory ./obj/ --output-file coverage.info
+```
+
+Step 6 : Generate html for code coverage, html content will get stored in htmlcontent directory
+
+```
+$ genhtml coverage.info --output-directory htmlcontent
+```
+
 ## TABLES
 
 |No.|Messages|Support|

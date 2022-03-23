@@ -28,7 +28,7 @@ SOURCES := $(shell find $(SRCDIR) -type f -name '*.$(SRCEXT)')
 
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 
-CFLAGS +=  -fPIC -Wall -Werror --coverage
+CFLAGS :=  -fPIC -Wall -Werror --coverage
 
 ifeq ($(DEBUG),1)
 	CFLAGS += -g3

@@ -20,14 +20,13 @@ SRCDIR := $(ROOT)
 
 CFLAGS += -I$(ROOT)/../include/
 CFLAGS += -Wall
-CFLAGS += --coverage
 
 CC := gcc
 OUTPUT := -o
 LIBS := -L$(ROOT)/../lib/
 LIBS += -lcunit
 LIBS += -lgtpv1c
-LIBS += -lgcov
+LDLIBS := -lgcov
 SRCS := $(SRCDIR)/fill_gtpv1_ies.c
 SRCS += $(SRCDIR)/test_decoder_gtpv1_ies.c
 SRCS += $(SRCDIR)/test_encoder_gtpv1_ies.c
